@@ -16,11 +16,19 @@ export class UsersService {
   }
 
   async findAll() {
-    return await this.usersRepository.find();
+    const users = await this.usersRepository.find();
+    if(!users) {
+      return 'No se encontraron usuarios en la base de datos';
+    }
+    return users;
   }
 
   async findOne(id: number) {
-    return await this.usersRepository.findOneBy({ id });
+    const user = await this.usersRepository.findOneBy({ id });
+    if (!user) {
+      return `No se encontró un usuario con id ${id} o tal vez fue eliminado`;
+    }
+    return user;
   }
 
   async update(id: number, updateUserDto: UpdateUserDto) {
