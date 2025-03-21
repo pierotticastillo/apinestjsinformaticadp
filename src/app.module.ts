@@ -19,6 +19,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
       inject: [ConfigService],
       useFactory: (configService: ConfigService) => ({
         type: 'mysql',
+        // type: 'postgres', /* Por si quiero usar Postgre SQL*/
         host: configService.get<string>('DATABASE_HOST'),
         port: configService.get<number>('DATABASE_PORT'),
         username: configService.get<string>('DATABASE_USERNAME'),
@@ -26,6 +27,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
         database: configService.get<string>('DATABASE_NAME'),
         entities: [__dirname + '/**/*.entity{.ts,.js}'],
         synchronize: true, // ⚠️ Solo para desarrollo, desactiva en producción
+        logging: true,
       }),
     }),
 
