@@ -107,8 +107,6 @@ PORT=3000
 
 ## 📝 **Licencia**
 
-Este proyecto está distribuido bajo la licencia MIT. Consulta el archivo `LICENSE` para más información.
+Este proyecto está bajo la Licencia MIT. Para más detalles, consulte el archivo [LICENSE](./LICENSE).
 
 💡 **¡Gracias por visitar este proyecto!** 🚀✨
-
-  
